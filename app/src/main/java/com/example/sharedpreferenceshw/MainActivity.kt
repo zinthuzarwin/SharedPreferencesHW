@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         btnCount.setOnClickListener {
 
-            var count = sharedPreferences.getInt("pref_count", 0)
+           var count = txtCount.text.toString().toInt()
             count++
 
 
@@ -33,5 +33,10 @@ class MainActivity : AppCompatActivity() {
             txtCount.text = count.toString()
 
         }
+
+        var countValue = sharedPreferences.getInt("pref_count", 0)
+
+        txtCount.text = countValue.toString()
+
     }
 }
